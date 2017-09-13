@@ -2,14 +2,16 @@ var sizeNav = 340;
 var vehicles = [];
 var attractors = [];
 var bubbles = [];
-
+var colors = ['#14f7ff', '#5f72ff', '#ff1fdd', '#d9ff06'];
 var canvas;
 
+
 var sketch = function(p) {
+    var colorSelected;
     p.setup = function() {
         var contenedor = document.getElementById('sketch');
        canvas = p.createCanvas(contenedor.offsetWidth, contenedor.offsetHeight);
-
+       colorSelected = p.random(colors);
     }
 
     p.draw = function() {
@@ -48,7 +50,7 @@ var sketch = function(p) {
 
         if (navBubble.checked) {
             var pos = p.createVector(p.mouseX, p.mouseY);
-            bubbles.push( new Bubble(p, pos));
+            bubbles.push( new Bubble(p, pos, colorSelected));
         }
         
         if (navAttractor.checked){

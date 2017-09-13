@@ -130,3 +130,7 @@ path {
     -ms-transform: translateY(50%);
     transform: translateY(50%);
     pointer-events: none; }
+
+  .btn:not(:last-child) {
+    margin-bottom: 4px;
+  }

@@ -1,8 +1,8 @@
 function Bubble(p, pos, col, size) {
     this.pos = pos;
     this.size = 1;
-    this.sizeDestino = size || p.random(50, 300);
-    this.col = p.color('#5f72ff');
+    this.sizeDestino = size || p.random(40, 260);
+    this.col = col || p.color('#ff1fdd');
     this.ease = 0.08;
 
     this.update = function() {
