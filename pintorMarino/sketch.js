@@ -9,7 +9,6 @@ var sketch = function(p) {
        var contenedor = document.getElementById('sketch');
        canvas = p.createCanvas(contenedor.offsetWidth, contenedor.offsetHeight);
        lineDegrees = p.floor(p.random(360));
-       colors = p.random(paletas);
     }
 
     p.draw = function() {

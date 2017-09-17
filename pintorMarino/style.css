@@ -26,22 +26,24 @@ body {
   -ms-flex: 1;
   flex: 1;
   position: relative; }
-  .sketch__item {
-    position: absolute;
-    top: 4.4vh;
-    left: 4.4vh;
-    width: calc(100% - 8.8vh);
-    height: calc(100% - 8.8vh); }
-    .sketch__item--frame {
-      z-index: 2;
-      border: 8px solid #fff;
-      border-color: rgba(255, 255, 255, 0.85);
-      top: 7.52vh;
-      left: 7.52vh;
-      width: calc(100% - 15.04vh);
-      height: calc(100% - 15.04vh);
-      -webkit-box-shadow: rgba(0, 0, 0, 0.13) 0 14px 36px, inset rgba(0, 0, 0, 0.05) 0 10px 35px;
-      box-shadow: rgba(0, 0, 0, 0.13) 0 14px 36px, inset rgba(0, 0, 0, 0.05) 0 10px 35px; }
+
+.sketch__item {
+  position: absolute;
+  top: 4.4vh;
+  left: 4.4vh;
+  width: calc(100% - 8.8vh);
+  height: calc(100% - 8.8vh); }
+
+.sketch__item--frame {
+  z-index: 2;
+  border: 8px solid #fff;
+  border-color: rgba(255, 255, 255, 0.85);
+  top: 7.52vh;
+  left: 7.52vh;
+  width: calc(100% - 15.04vh);
+  height: calc(100% - 15.04vh);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.13) 0 14px 36px, inset rgba(0, 0, 0, 0.05) 0 10px 35px;
+  box-shadow: rgba(0, 0, 0, 0.13) 0 14px 36px, inset rgba(0, 0, 0, 0.05) 0 10px 35px; }
 
 .nav-colum {
   width: 33vh;
@@ -66,16 +68,20 @@ body {
   -ms-flex: 1;
   flex: 1;
   text-align: center; }
-  .main-nav__item {
-    padding: 10px 0;
-    text-transform: uppercase;
-    font-size: .7rem; }
-    .main-nav__item input[type=radio] {
-      visibility: hidden; }
-      .main-nav__item input[type=radio]:checked + label {
-        color: #007bf9; }
-      .main-nav__item input[type=radio]:checked + label path {
-        fill: #007bf9; }
+
+.main-nav__item {
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-size: .7rem; }
+
+.main-nav__item input[type=radio] {
+  visibility: hidden; }
+
+.main-nav__item input[type=radio]:checked + label {
+  color: #007bf9; }
+
+.main-nav__item input[type=radio]:checked + label path {
+  fill: #007bf9; }
 
 .secondary-nav {
   padding: 0 20px; }
@@ -99,8 +105,9 @@ body {
 
 .icon {
   cursor: pointer; }
-  .icon svg {
-    width: 100%; }
+
+.icon svg {
+  width: 100%; }
 
 path {
   fill: #4c4c4c; }
@@ -121,62 +128,63 @@ path {
   -o-transition: all .5s;
   transition: all .5s;
   pointer-events: auto; }
-  .btn-eliminar:focus {
-    outline: none; }
-  .btn-eliminar--hidden {
-    background: #ddd;
-    opacity: 0;
-    -webkit-transform: translateY(50%);
-    -ms-transform: translateY(50%);
-    transform: translateY(50%);
-    pointer-events: none; }
 
-  .btn:not(:last-child) {
-    margin-bottom: 4px;
-  }
-nav {
-  ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-}
+.btn-eliminar:focus {
+  outline: none; }
+
+.btn-eliminar--hidden {
+  background: #ddd;
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+  pointer-events: none; }
+
+.btn:not(:last-child) {
+  margin-bottom: 4px; }
+
+nav ul, nav li {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
 .colors-nav {
   text-align: left;
-  padding: 0 20px 20px;
-
-  .btn-cambiar {
+  padding: 0 20px 20px; }
+  .colors-nav .btn-cambiar {
     color: #007bf9;
     border-radius: 2rem;
     border: 0;
     cursor: pointer;
-    display: none;
-  }
-  ul {
+    display: none; }
+  .colors-nav ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
-    margin: 0 auto 4px;
-  }
-
-  input {
-    display: none;
-  }
-
-  li {
+    margin: 0 auto 4px; }
+  .colors-nav input {
+    display: none; }
+  .colors-nav li {
     width: 40px;
-    margin-bottom: 10px;
-  }
-
-  label {
+    margin-bottom: 10px; }
+  .colors-nav label {
     display: block;
-    height: 40px;
+    padding-bottom: 100%;
     cursor: pointer;
-    transition: all .3s;
-  }
-
-  input:checked + label {
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+  .colors-nav input:checked + label {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
     transform: scale(1.4);
-    box-shadow: rgba(0, 0, 0, 0.5) 0 5px 20px -3px;
-  }
-}
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 5px 20px -3px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 5px 20px -3px; }

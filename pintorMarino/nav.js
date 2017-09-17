@@ -12,7 +12,7 @@ var colors = ['#f2f2f2', '#005BC5', '#17F9FF', '#EB7B59', '#E5DDCB', '#A7C5BD', 
 var colores1 = ['#554236', '#F77825', '#D3CE3D', '#F1EFA5', '#60B99A', '#DCEDC2', '#FFAAA6', '#f2f2f2', '#000000'];
 var colores2 = ['#f2f2f2', '#005BC5', '#17F9FF', '#EB7B59', '#E5DDCB', '#A7C5BD', '#e4c784', '#CF4647', '#000'];
 
-var paletas = [ colores1, colores2];
+var paletas = [ colores1, colores2, colores2];
 
 var colorSelected = 1;
 
@@ -44,8 +44,13 @@ window.addEventListener('resize', function(){
 
 $(document).ready(function(){
     generatorColorNav();
-})
+});
+
 function generatorColorNav(){
+
+    var n = Math.floor (Math.random() * paletas.length);
+    colors = paletas[n];
+
     $ul = $('#colorNav ul');
 
     colors.forEach(function( col, index ) {
