@@ -3,10 +3,14 @@ var navBubble,
     btnEliminarImanes,
     btnReiniciar;
 
-var navGalaxia,
-    navPlaneta,
-    navAsteroide,
-    navSnowflake;
+var navOrbit,
+    navAddOut,
+    navAddIn;
+
+var nav;
+
+var btnDibujar,
+    btnEliminar;
 
 // colores 
 
@@ -21,17 +25,28 @@ var cOrbit = 0;
 var cInteractions = 0;
 
 document.addEventListener('DOMContentLoaded', function(){
-    navGalaxia = document.getElementById('galaxia');
-    navPlaneta = document.getElementById('planeta');
-    navAsteroide = document.getElementById('asteroide');
-    navSnowflake = document.getElementById('snowflake');
+    navOrbit = document.getElementById('orbit');
+    navAddOut = document.getElementById('addOut');
+    navAddIn = document.getElementById('addIn');
+
+    // navs
+    nav = document.getElementById('nav');
+
+
+    // botones
+    btnDibujar = document.getElementById('dibujar');
+    btnDibujar.addEventListener('click', fnDibujar);
+
+    // btnEliminar = document.getElementById('eliminar');
+    // btnEliminar.addEventListener('click', fnEliminar);
+
 
     btnReiniciar = document.getElementById('btn-reiniciar');
 
     btnDownload = document.getElementById('btn-download');
     btnDownload.addEventListener('click', function(){
         var name ='canvas' + Date.now();
-        mySketch.saveCanvas(canvas, name, 'png');
+        saveCanvas(canvas, name, 'png');
     });
 
     btnReiniciar.addEventListener('click', function(){

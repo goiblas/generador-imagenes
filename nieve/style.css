@@ -134,3 +134,28 @@ path {
   .btn:not(:last-child) {
     margin-bottom: 4px;
   }
+
+.orbitnav {
+  position: relative;
+}
+
+ .orbit {
+  max-height: 0;
+  overflow: hidden;
+  }
+
+  .orbitnav .orbit {
+    max-height: none;
+  }
+  .orbitnav .general {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .btn-dibujar {
+    padding: .6rem 1rem;
+    color: #fff;
+    background-color: #007bf9;
+    border-radius: 2rem;
+    margin-top: 30px;
+  }
