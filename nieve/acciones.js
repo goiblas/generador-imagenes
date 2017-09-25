@@ -6,7 +6,7 @@ function mousePressed() {
     if( mouseX < width + 30) {
 
         if(navOrbit.checked || navAddIn.checked || navAddOut.checked){
-            if(!makedCircle){
+            if(!makedCircle && snowflakesCreated.length < 6){
                 initPoint = createVector(mouseX, mouseY);
                 makedCircle =! makedCircle;
                 frozen = true;

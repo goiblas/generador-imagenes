@@ -5,12 +5,13 @@ var canvas;
 // copos de nieve
 var path = [];
 var snowflakes = [];
+var snowflakesCreated = [];
 var destinyCircles = [];
 var resolution = 30;
 var branches = [];
 var root;
 var pintar = false;
-
+var radioAnterior = 0;
 
 function setup(){
     var contenedor = document.getElementById('sketch');
@@ -27,6 +28,7 @@ function draw(){
         fill(250, 85)
         rect(0, 0, width, height);
     }
+
     drawActions();
 
     if(root){
@@ -40,7 +42,7 @@ function draw(){
 
 function drawSnowflakes(){
 
-    if( frameCount % 200 === 0 && snowflakes.length < 30 && !frozen ){
+    if( frameCount % 50 === 0 && snowflakes.length < 30 && !frozen ){
         var newradio = random(0.1, 20);
         snowflakes.push(
             new Snowflake(
@@ -54,6 +56,14 @@ function drawSnowflakes(){
     for( var i = snowflakes.length -1; i >= 0; i--){
         snowflakes[i].update();
         snowflakes[i].draw();
+    }
+    drawSnowFlakesCreated();
+}
+
+function drawSnowFlakesCreated(){
+    for( var i = snowflakesCreated.length -1; i >= 0; i--){
+        snowflakesCreated[i].update();
+        snowflakesCreated[i].draw();
     }
 }
 
@@ -74,6 +84,15 @@ function drawDestinyCircles (){
                         cir.inside
                     )
                 )
+                if(!cir.inside){
+                    root.allRadius += cir.r * 2;
+                }else {
+                    if(radioAnterior < cir.r){
+                        root.allRadius += (cir.r - radioAnterior) * 2;
+                    }
+                    radioAnterior = cir.r;
+                }
+
             } else {
                 cir.attract();
                 cir.update();
@@ -125,22 +144,17 @@ function drawBranches (){
 function addSnowflake() {
 
     var pos = createVector(root.pos.x, root.pos.y);
-    var radio = root.r;
-    for(var i = 0;i < branches.length; i++){
-        radio += branches[i].r;
-    }
     var pathForSend = path.map(function(v){
         var x = v.x - root.pos.x;
         var y = v.y - root.pos.y;
         return createVector(x, y);
     });
 
-    snowflakes.push( new Snowflake(
+    snowflakesCreated.push( new Snowflake(
         pos,
-        radio,
+        root.allRadius,
         pathForSend
     ));
-
 
     
     path = [];

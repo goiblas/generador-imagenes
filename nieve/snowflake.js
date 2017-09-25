@@ -10,7 +10,7 @@ function Snowflake(pos, r, points){
 
     this.max = 150;
     this.ease = 0.01;
-    this.scale = 1 / (r / random(30, this.max)) 
+    this.scale = random(60, 70) / r;
     this.tmpscale = 1;
     this.closed = random(1) > 0.5;
  

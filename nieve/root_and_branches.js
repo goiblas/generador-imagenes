@@ -2,7 +2,7 @@ function Root(pos, r, cornes){
     this.pos = pos;
     this.r = r;
     this.cornes = cornes;
-
+    this.allRadius = r;
     this.update = function(){
 
     }
