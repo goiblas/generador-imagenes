@@ -77,8 +77,10 @@ function checkNavs(){
 
 
 function fnDibujar(){
-    pintar = true;
-    destinyCircles = [];
+    if(branches.length > 0){
+        pintar = true;
+        destinyCircles = [];
+    }
 }
 
 function fnEliminar(){

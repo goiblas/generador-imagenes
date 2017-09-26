@@ -131,7 +131,7 @@ function drawBranches (){
         }
 
         beginShape();
-        stroke(120, 90, 250, 70);
+        stroke(0, 123, 249, 90);
         strokeWeight(1);
         noFill();
         for (var pos of path) {
